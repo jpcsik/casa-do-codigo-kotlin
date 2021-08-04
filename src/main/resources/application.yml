@@ -1,10 +1,17 @@
+
 micronaut:
   application:
     name: casaDoCodigoKotlin
+
 datasources:
   default:
-    url: jdbc:mysql://localhost:3306/casa_do_codigo_kotlin
-    driverClassName: com.mysql.cj.jdbc.Driver
-    username: root
-    password: root
+    url: jdbc:postgresql://localhost:5432/casa-do-codigo-kotlin
+    driverClassName: org.postgresql.Driver
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
+    maximum-pool-size: 5
+    minimum-idle: 1
+    idle-timeout: 10000
+    connection-timeout: 20000
+
 jpa.default.properties.hibernate.hbm2ddl.auto: update

@@ -34,11 +34,13 @@ dependencies {
     implementation("javax.annotation:javax.annotation-api")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
-    implementation("mysql:mysql-connector-java:8.0.25")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    //banco de dados
+    implementation("org.postgresql:postgresql:42.2.23")
 
 }
 
