@@ -11,7 +11,7 @@ class Autor(
     val nome: String,
     val email: String,
     var descricao: String
-){
+) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
