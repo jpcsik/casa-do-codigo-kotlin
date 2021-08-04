@@ -1,5 +1,7 @@
-package br.com.zup.autores
+package br.com.zup.autores.controller
 
+import br.com.zup.autores.AutorRepository
+import br.com.zup.autores.dto.DetalheAutoresResponse
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get

@@ -1,5 +1,8 @@
-package br.com.zup.autores
+package br.com.zup.autores.controller
 
+import br.com.zup.autores.Autor
+import br.com.zup.autores.AutorRepository
+import br.com.zup.autores.dto.NovoAutorRequest
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
@@ -18,8 +21,6 @@ class CadastraAutorController(@Inject val autorRepository: AutorRepository) {
 
         val autor: Autor = request.paraAutor()
         autorRepository.save(autor)
-
-        println("Nome: ${autor.nome},  Email: ${autor.email}, Descricao: ${autor.descricao}")
 
         val uri = UriBuilder.of("/autores/{id}").expand(mutableMapOf(Pair("id", autor.id)))
 

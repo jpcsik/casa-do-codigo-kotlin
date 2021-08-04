@@ -1,5 +1,6 @@
-package br.com.zup.autores
+package br.com.zup.autores.dto
 
+import br.com.zup.autores.Autor
 import io.micronaut.core.annotation.Introspected
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
