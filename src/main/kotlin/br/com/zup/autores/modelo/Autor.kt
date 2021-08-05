@@ -1,4 +1,4 @@
-package br.com.zup.autores
+package br.com.zup.autores.modelo
 
 import java.time.LocalDateTime
 import javax.persistence.Entity
@@ -10,7 +10,8 @@ import javax.persistence.Id
 class Autor(
     val nome: String,
     val email: String,
-    var descricao: String
+    var descricao: String,
+    val endereco: Endereco
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
