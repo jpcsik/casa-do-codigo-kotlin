@@ -12,6 +12,7 @@ import javax.transaction.Transactional
 class DeletaAutorController(@Inject val autorRepository: AutorRepository) {
 
     @Delete("/{id}")
+    @Transactional
     fun deleta(@PathVariable id: Long): HttpResponse<Any> {
 
         val possivelAutor = autorRepository.findById(id)

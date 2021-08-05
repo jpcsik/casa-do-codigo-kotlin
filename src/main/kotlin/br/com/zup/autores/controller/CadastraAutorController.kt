@@ -18,6 +18,7 @@ import javax.validation.Valid
 class CadastraAutorController(@Inject val autorRepository: AutorRepository) {
 
     @Post
+    @Transactional
     fun cadastra(@Body @Valid request: NovoAutorRequest): HttpResponse<Any> {
 
         val autor: Autor = request.paraAutor()

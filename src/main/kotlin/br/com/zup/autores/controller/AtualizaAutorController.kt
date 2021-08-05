@@ -13,6 +13,7 @@ import javax.transaction.Transactional
 class AtualizaAutorController(@Inject val autorRepository: AutorRepository) {
 
     @Put("/{id}")
+    @Transactional
     fun atualiza(@PathVariable id: Long, descricao: String): HttpResponse<Any> {
         val possivelAutor = autorRepository.findById(id)
 
@@ -24,8 +25,8 @@ class AtualizaAutorController(@Inject val autorRepository: AutorRepository) {
 
         autor.descricao = descricao
 
-        autorRepository.update(autor)
         return HttpResponse.ok(DetalheAutoresResponse(autor))
+
     }
 
 }
