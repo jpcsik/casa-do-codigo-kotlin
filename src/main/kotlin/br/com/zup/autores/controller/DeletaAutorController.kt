@@ -1,6 +1,6 @@
 package br.com.zup.autores.controller
 
-import br.com.zup.autores.AutorRepository
+import br.com.zup.autores.interfaces.AutorRepository
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Delete

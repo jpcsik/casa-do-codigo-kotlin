@@ -1,8 +1,8 @@
 package br.com.zup.autores.controller
 
 import br.com.zup.autores.modelo.Autor
-import br.com.zup.autores.AutorRepository
-import br.com.zup.autores.CepClient
+import br.com.zup.autores.interfaces.AutorRepository
+import br.com.zup.autores.interfaces.CepClient
 import br.com.zup.autores.dto.NovoAutorRequest
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Body
@@ -25,9 +25,9 @@ class CadastraAutorController(
     @Transactional
     fun cadastra(@Body @Valid request: NovoAutorRequest): HttpResponse<Any> {
 
-        val enderecoResponse = cepClient.consulta(request.cep) //Faltando formatar o cep antes de mandar a requisição
+        val enderecoResponse = cepClient.consulta(request.cep)
 
-        val autor: Autor = request.paraAutor(enderecoResponse) //Faltando fazer uma validação
+        val autor: Autor = request.paraAutor(enderecoResponse)
         autorRepository.save(autor)
 
         val uri = UriBuilder.of("/autores/{id}").expand(mutableMapOf(Pair("id", autor.id)))

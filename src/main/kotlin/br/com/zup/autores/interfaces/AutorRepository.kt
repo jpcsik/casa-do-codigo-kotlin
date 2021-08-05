@@ -1,4 +1,4 @@
-package br.com.zup.autores
+package br.com.zup.autores.interfaces
 
 import br.com.zup.autores.modelo.Autor
 import io.micronaut.data.annotation.Repository
