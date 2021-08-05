@@ -10,4 +10,5 @@ class Endereco(enderecoResponse: EnderecoResponse) {
     val localidade = enderecoResponse.localidade
     val bairro = enderecoResponse.bairro
     val uf = enderecoResponse.uf
+
 }
