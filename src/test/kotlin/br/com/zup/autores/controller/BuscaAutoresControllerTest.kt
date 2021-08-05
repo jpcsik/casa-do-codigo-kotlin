@@ -25,7 +25,7 @@ internal class BuscaAutoresControllerTest {
     @field:Client("/")
     lateinit var client: HttpClient
 
-    lateinit var autor: Autor
+    private lateinit var autor: Autor
 
     @BeforeEach
     internal fun setup() {
